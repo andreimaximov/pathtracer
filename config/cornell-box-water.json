@@ -1,0 +1,28 @@
+{
+  "camera": {
+    "width":    1024,
+    "height":   768,
+    "center":   [0, 0.8, 1],
+    "position": [0, 1, 2.7],
+    "up":       [0, 1, 0],
+    "fovy":     45
+  },
+  "job": {
+    "threads":    4,
+    "partitions": 1024
+  },
+  "rendering": {
+    "bounces":    4,
+    "samples":    50000,
+    "epsilon":    0.001,
+    "background": [0.8, 0.7, 0.7]
+  },
+  "loader": {
+    "textures": false,
+    "normals":  true
+  },
+  "debug": {
+    "normals": false,
+    "diffuse": false
+  }
+}
