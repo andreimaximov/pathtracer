@@ -13,7 +13,7 @@ if [ ! -f ${EXE} ]; then
 fi
 
 OBJ="${CACHE}/CornellBox-Dragon.obj"
-URL="https://s3.amazonaws.com/andrei-maximov-public/ucsd/cse163/pa3/scenes/CornellBox-Dragon.obj"
+URL="http://andreimaximov.com/files/projects/pathtracer/CornellBox-Dragon.obj"
 
 if [[ ! -f ${OBJ} || ! -d ${CACHE} ]]; then
     echo "Downloading OBJ file..."
