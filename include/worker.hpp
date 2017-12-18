@@ -1,6 +1,7 @@
 #include <atomic>
 #include <mutex>
 #include <queue>
+#include <vector>
 #include "config.hpp"
 #include "image.hpp"
 #include "pathtracer.hpp"
@@ -20,14 +21,16 @@ class Worker {
     int end;
 
     int samples;
+
+    bool operator>(const Work& other) const;
   };
 
   /**
-   * Concurrent FIFO queue of work units.
+   * Thread safe queue that prioritizes partitions with less samples.
    */
   class Queue {
    private:
-    std::queue<Work> queue;
+    std::priority_queue<Work, std::vector<Work>, std::greater<Work>> queue;
 
     std::mutex mutex;
 

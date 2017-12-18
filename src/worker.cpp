@@ -2,6 +2,16 @@
 
 /**
  * ============================================================
+ *                             WORK
+ * ============================================================
+ */
+
+bool Worker::Work::operator>(const Worker::Work& other) const {
+  return samples > other.samples;
+}
+
+/**
+ * ============================================================
  *                            WORKER
  * ============================================================
  */
@@ -56,7 +66,7 @@ bool Worker::Queue::poll(Work& work) {
 
   if (queue.empty()) return false;
 
-  work = std::move(queue.front());
+  work = std::move(queue.top());
   queue.pop();
   return true;
 }
@@ -66,6 +76,6 @@ bool Worker::Queue::peek(Work& work) {
 
   if (queue.empty()) return false;
 
-  work = queue.front();
+  work = queue.top();
   return true;
 }
