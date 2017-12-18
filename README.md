@@ -43,11 +43,7 @@ OPTIONS:
 
 ## Building
 
-On OS X or Linux use the `cmake.sh` script to create a Makefile project in the
+On OS X or Linux run `scripts/cmake.sh` to create a Makefile project in the
 `build` directory. Execute `make` in the `build` directory to build the
-`pathtracer` and `pathtracer_tests` executable. You will need **CMake 3.x+** to
-execute the `cmake.sh` script. Follow [these directions for Ubuntu](http://askubuntu.com/questions/610291/how-to-install-cmake-3-2-on-ubuntu-14-04)
-or use `sudo port install cmake` on macOS.
-
-GCC 5.4+ is a compatible compiler although recent version of Clang and MSVC
-should work as well.
+`pathtracer` and `pathtracer_tests` executables. GCC 5.4+ is a compatible compiler
+although recent version of Clang and MSVC should work as well.

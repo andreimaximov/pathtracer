@@ -1,24 +1,6 @@
-#! /bin/bash
+#!/bin/bash
 
-SCRIPTDIR=$(cd $(dirname ${0}) && pwd -P)
-ENV="${SCRIPTDIR}/env.sh"
-
-source ${SCRIPTDIR}/env.sh
-
-EXE="${PADIR}/build/pathtracer"
-
-if [ ! -f ${EXE} ]; then
-    echo "Please compile the pathtracer in the build directory."
-    exit 1
-fi
-
-OBJ="${CACHE}/CornellBox-Dragon.obj"
-URL="https://raw.githubusercontent.com/andreimaximov/cse163-reports/master/pa3/scenes/CornellBox-Dragon.obj"
-
-if [[ ! -f ${OBJ} || ! -d ${CACHE} ]]; then
-    echo "Downloading OBJ file..."
-    mkdir -p ${CACHE}
-    curl -o ${OBJ} ${URL}
-fi
-
-${EXE} ${OBJ} ${SCENES} "${CONFIG}/cornell-box-dragon.json"
+./scripts/run.sh \
+    ./scenes/CornellBox-Dragon.obj \
+    ./scenes \
+    ./config/cornell-box-dragon.json
